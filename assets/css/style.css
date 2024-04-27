@@ -3,10 +3,12 @@ body {
   color: gray;
   font-weight: 300;
   font-size: 1.1rem;
-  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-*::selection{
+*::selection {
   background-color: #000;
   color: #fff;
 }
@@ -26,27 +28,38 @@ body {
   position: absolute;
   opacity: 0.9;
   /* border-top-right-radius: 0; */
+  /* z-index: 9999; */
 }
+
 .header {
   height: 100px;
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  padding: 0  7rem 20px;
 }
+
 .logo {
+  position: relative;
   font-weight: 900;
   font-size: 1.3rem;
-  color: white;
+ 
+  color: #000;
 }
+
 nav ul {
   gap: 30px;
 }
 nav ul li a {
-  color: white;
+  font-weight: 400;
+  color: #000;
 }
 nav ul li a.active {
   border-bottom: 1px solid white;
 }
 .contactUs {
-  margin-left: 80px;
+  /* position: relative; */
+  margin-left: 4rem;
   padding: 14px 20px;
   color: #fff;
   background: #7971ea;
@@ -54,6 +67,7 @@ nav ul li a.active {
   font-size: 0.7rem;
   font-weight: 900;
   text-transform: uppercase;
+  display: block;
 }
 .hamBtn {
   display: none;
@@ -61,18 +75,17 @@ nav ul li a.active {
 }
 
 /* *mobile menu */
- @media (max-width: 915px) {
-  .headerSection::before {
-    opacity: 0.5;
-  }
-  .header {
-     position: static; 
-  }
-  .contactUs {
+@media (max-width: 915px) {
+.header{
+  position: static;
+}
+ 
+  .contactUs, nav {
     display: none;
-  }
-  nav ul {
+    visibility: hidden;
     
+  }
+  /* nav ul {
     flex-direction: column;
     gap: 10px;
     justify-content: center;
@@ -83,46 +96,45 @@ nav ul li a.active {
     font-size: 22px;
   }
   nav {
-    /* opacity: 0; */
-    /* visibility: hidden; */
+     opacity: 0; 
+    visibility: hidden; 
     position: absolute;
     left: 50%;
     top: 0;
     right: 0;
     bottom: 0;
     background-color: #fff;
-  }
+  } */
   .hamBtn {
-    position: relative;
+    /* position: relative; */
     display: block;
     font-size: 20px;
-    color: #fff;
+    color: #000000;
   }
-} 
+}
 /* *header carusel */
-.info-carousel,.formBox{
+.info-carousel,
+.formBox {
   padding: 0 15px;
 }
-.info-carousel h1{
+.info-carousel h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1.5rem;
 }
-.info-carousel p{
+.info-carousel p {
   color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem;
-    margin: 0 0 24px;
+  font-size: 1.1rem;
+  margin: 0 0 24px;
 }
-.mb{
+.mb {
   margin-bottom: 1.5rem;
-
 }
-.mt{
+.mt {
   margin: 5rem 30px;
-  
 }
-.info-carousel .admisBtn{
+.info-carousel .admisBtn {
   border: none;
   color: white;
   background-color: #7971ea;
@@ -136,27 +148,26 @@ nav ul li a.active {
   white-space: nowrap;
 }
 
-.formBox{
- 
+.formBox {
   padding: 40px;
-    background: #fff;
-    border-radius: 7px;
+  background: #fff;
+  border-radius: 7px;
 }
-.formBox h4{
+.formBox h4 {
   font-size: 1.5rem;
 }
-.formBox input{
+.formBox input {
   margin-bottom: 10px;
   width: 100%;
   height: 48px;
   font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    padding-left: 6px;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding-left: 6px;
 }
-.formBox .formBtn{
+.formBox .formBtn {
   border-radius: 30px;
   border: none;
   text-transform: uppercase;
@@ -164,98 +175,95 @@ nav ul li a.active {
   font-weight: 900;
   padding: 14px 30px;
   color: #fff;
-    background-color: #7971ea;
+  background-color: #7971ea;
 }
 
 @keyframes carousel {
   0% {
-   bottom: -150px;
+    bottom: -200px;
   }
   50% {
-     bottom: -50px;
+    bottom: -150px;
   }
   100% {
-   bottom: 0;
+    bottom: 0;
   }
 }
-.animation{
-  animation-name:carousel;
-  animation-duration: 4s; 
-  animation-iteration-count: infinite; 
+.animation {
+  animation-name: carousel;
+  animation-duration: 4s;
+  animation-iteration-count: inherit;
   animation-delay: 3ms;
-  
 }
 
-.courseItem{
+.courseItem {
   padding-bottom: 13rem;
   background: #7971ea;
 }
-h2{
- padding-top: 3rem;
+h2 {
+  padding-top: 3rem;
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 1.8rem;
   font-weight: 900;
   text-align: center;
 }
-.mb-5{
+.mb-5 {
   margin-bottom: 3rem;
 }
 
-
 /*  */
-.coursesBox{
+.coursesBox {
   background-color: #fff;
 }
-.content-box{
+.content-box {
   position: relative;
-  padding-top: 35px ;
-  
+  padding-top: 35px;
 }
-.price{
+.price {
   border: 1px solid #7971ea;
   border-radius: 5px;
   background-color: #7971ea;
   color: #fff;
   position: absolute;
   right: 0;
-top: -30px;
-padding: 10px;
+  top: -30px;
+  padding: 10px;
 }
-.infoBox{
+.infoBox {
   padding: 0 1.5rem;
   margin-bottom: 10px;
 }
-.lesson{
-  font-size: .9rem;
-  margin-bottom: .9rem;
+.lesson {
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
 }
-.lessonHeading{
+.lessonHeading {
   color: #7971ea;
- font-size: 1.3rem;
+  font-size: 1.3rem;
 }
-.footbox{
+.footbox {
   border-top: 1px solid #495057;
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding:0  1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
 }
-.message{
+.message {
   border-left: 1px solid #495057;
-padding-left: 8px;
+  padding-left: 8px;
 }
-.padding{
+.padding {
   padding: 20px;
 }
 /* * */
-.mainHeading{
+.mainHeading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.mainHeading h5{
+.mainHeading h5 {
   font-size: 3rem;
   color: #000;
   margin-bottom: 1.3rem;
@@ -263,72 +271,70 @@ padding-left: 8px;
   text-transform: uppercase;
   text-align: center;
 }
-.mt-5{
+.mt-5 {
   margin-top: 20rem;
-
 }
-.mainHeading p{
+.mainHeading p {
   margin-top: 0;
   margin-bottom: 1rem;
   text-align: center;
- width: 50%;
-  
+  width: 50%;
 }
 
-.excellent{
+.excellent {
   font-size: 2rem;
   color: #000 !important;
   margin-bottom: 1.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
-.loremInfo{
+.loremInfo {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-    color: gray;
-    font-weight: 300;
-    font-size: 1.3rem;
+  color: gray;
+  font-weight: 300;
+  font-size: 1.3rem;
 }
-.foot-program{
+.foot-program {
   display: flex;
   flex-direction: column;
   font-size: 1.05rem;
-    color: #7971ea;
-    gap: 10px;
+  color: #7971ea;
+  gap: 10px;
 }
 
-.teacherBox{
+.teacherBox {
   border: 1px solid #e9ecef;
   padding: 30px;
   margin-bottom: 5rem;
   text-align: center;
 }
-.teacherBox img{
+.teacherBox img {
   border-radius: 50%;
-width: 50%;
-margin-top: -100px;
-margin-bottom: 1.5rem;
-position: relative;
+  width: 50%;
+  margin-top: -100px;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
-.teacherBox .teachName{
+.teacherBox .teachName {
   font-size: 1.4rem;
-  color: #000 
+  color: #000;
 }
-.teacherBox .teachWork{
+.teacherBox .teachWork {
   color: #adb5bd;
   font-size: 1.2rem;
   padding-bottom: 10px;
 }
 
-.studentJerome{
-  background-image: url(	https://preview.colorlib.com/theme/oneschool/images/hero_1.jpg);
+.studentJerome {
+  background-image: url(https://preview.colorlib.com/theme/oneschool/images/hero_1.jpg);
   background-size: cover;
   /* height: 100vh; */
   background-attachment: fixed;
   position: relative;
   padding: 4em;
 }
-.studentJerome::after{
+.studentJerome::after {
   content: "";
   position: absolute;
   top: 0;
@@ -337,25 +343,25 @@ position: relative;
   bottom: 0;
   z-index: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7)
+  background: rgba(0, 0, 0, 0.7);
 }
-.jerome-box{
+.jerome-box {
   z-index: 3;
   position: relative;
-text-align: center;
-/* margin-top: 5rem; */
+  text-align: center;
+  /* margin-top: 5rem; */
 }
-.jerome-box img{
-width: 25%;
-border-radius: 50%;
+.jerome-box img {
+  width: 25%;
+  border-radius: 50%;
 }
-.jeromeName{
+.jeromeName {
   color: #fff;
-    font-size: 1.5rem;
-    margin: 1.5rem;
-    line-height: 1.2;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+  line-height: 1.2;
 }
-.infoJerome{
+.infoJerome {
   font-size: 1.5rem;
   font-style: italic;
   color: #fff;
@@ -363,13 +369,12 @@ border-radius: 50%;
   margin-bottom: 1rem;
 }
 
-.chooseBox{
+.chooseBox {
   padding: 4em 0;
   position: relative;
-  
 }
 
-.chooseTitle{
+.chooseTitle {
   font-size: 3rem;
   color: #000;
   margin-bottom: 1.8rem;
@@ -377,7 +382,7 @@ border-radius: 50%;
   text-align: center;
 }
 
-.future-box{
+.future-box {
   overflow: hidden;
   display: -webkit-box;
   /* display: -ms-flexbox; */
@@ -389,32 +394,30 @@ border-radius: 50%;
   top: 0;
   /* pointer-events: none; */
 }
-.blob1{
-
+.blob1 {
   top: 0;
   right: -10rem;
   position: absolute;
 }
-.blob2{
-  
+.blob2 {
   bottom: 0;
   left: -10rem;
   position: absolute;
 }
 
-.whyChoosebox{
-  padding: 1.5rem ;
+.whyChoosebox {
+  padding: 1.5rem;
   background-color: #fff;
   box-shadow: 0 5px 50px -10px rgba(0, 0, 0, 0.2);
-  border-radius: 0.25rem ;
+  border-radius: 0.25rem;
   position: relative;
 }
-.whyChoosebox ul li{
+.whyChoosebox ul li {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
 }
-.whyChoosebox ul li i{
+.whyChoosebox ul li i {
   width: 40px;
   height: 40px;
   background-color: #7971ea;
@@ -424,78 +427,84 @@ border-radius: 50%;
   margin-right: 10px;
 }
 
-.messageForm{
+.messageForm {
   background-color: #f8f9fa;
   padding: 4em 0;
   position: relative;
 }
 
-.messageTitle{
+.messageTitle {
   font-size: 3rem;
   color: #000;
   margin-bottom: 1rem;
   font-weight: 900;
 }
-.msgInfo{
+.msgInfo {
   margin-bottom: 3rem;
 }
 
-.messageForm form input,textarea{
+.messageForm form input,
+textarea {
   display: block;
-    width: 100%;
-    height: calc(2.25rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    outline: none;
-    margin: 1rem 0;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  outline: none;
+  margin: 1rem 0;
 }
-.formBTN,.subscribeBtn button{
+.formBTN,
+.subscribeBtn button {
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
-    font-size: 12px;
-    border-radius: 30px;
-    font-weight: 900;
-    padding: 1rem 3rem;
-    color: #fff;
-    background-color: #7971ea;
-    border-color: #7971ea;
+  font-size: 12px;
+  border-radius: 30px;
+  font-weight: 900;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #7971ea;
+  border-color: #7971ea;
 }
 
-footer{
+footer {
   padding: 7em 0;
 }
-footer .aboutOneSchool h6 ,.links, p.subscibe{
-  font-size: .9rem;
-  letter-spacing: .1rem;
+footer .aboutOneSchool h6,
+.links,
+p.subscibe {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: #000;
   margin-bottom: 1.5rem;
   font-weight: 900;
 }
-.subDesc,.aboutInfoSchool, .linkcontainer ul li a{
+.subDesc,
+.aboutInfoSchool,
+.linkcontainer ul li a {
   font-size: 1rem;
 }
-.subscribeBtn{
+.subscribeBtn {
   display: flex;
   margin-top: 10px;
 }
-.subscribeBtn button{
-border-radius: 0;
+.subscribeBtn button {
+  border-radius: 0;
 }
-.subscribeBtn input{
-  
+.subscribeBtn input {
   padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
 }
-.aboutOneSchool, .linkcontainer{
+.aboutOneSchool,
+.linkcontainer {
   margin-bottom: 20px;
 }
